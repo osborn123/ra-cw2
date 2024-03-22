@@ -17,8 +17,7 @@
     (checkout ?item - item ?shopbot - shopbot) 
     (not-empty-basket ?item - item ?basket - basket)
     (empty ?basket - basket)
-    (cell-occupied ?cell - aisleCell)
-    
+    (cell-occupied ?cell - aisleCell ?shopbot - shopbot)
     (assigned ?basket - basket ?shopbot - shopbot)
   )
 (:functions
@@ -45,12 +44,12 @@
     :precondition (and 
                     (at-shopbot ?shopbot ?from) 
                     (connected ?from ?to)
-                    (not(cell-occupied ?to ))
+                    (not(cell-occupied ?to ?shopbot))
                     )
     :effect (and 
               (not (at-shopbot ?shopbot ?from))
               (at-shopbot ?shopbot ?to)
-              (forall (?other - shopbot) (when (not (= ?other ?shopbot)) (not(cell-occupied ?to))))
+              (forall (?other - shopbot) (when (not (= ?other ?shopbot)) (not(cell-occupied ?to ?shopbot))))
              
               )
     )
@@ -86,32 +85,32 @@
         (at-shopbot ?shopbot ?from) 
         (adjacent ?from ?loc)
         (not (in ?item ?loc)))
-    :effect (and (in ?item ?loc) 
-    (not (not-empty-basket ?item ?basket)) )
+    :effect (and    
+                (in ?item ?loc) 
+                (not (not-empty-basket ?item ?basket)) )
   )
 
   (:action weigh
     :parameters (?shopbot - shopbot ?item - item ?cell - aisleCell ?ws - weighingScale ?basket - basket)
     :precondition (and (holding ?shopbot ?basket) 
-                    (not-empty-basket ?item ?basket) 
+                       (not-empty-basket ?item ?basket) 
                        (at-shopbot ?shopbot ?cell)  
                        (adjacent ?cell ?ws) 
                        (weighable ?item) 
                        (not (weighed ?item)))
-    :effect (and (weighed ?item) 
-    (not (not-empty-basket ?item ?basket)) 
-    (in ?item ?ws))
+    :effect (and 
+                  (weighed ?item) 
+                  (not (not-empty-basket ?item ?basket)) 
+                  (in ?item ?ws))
   )
 
 
 (:action checkout-item-with-credits
     :parameters (?shopbot - shopbot ?item - item ?basket - basket ?cell - aisleCell ?cs - checkoutStand)
     :precondition (and (not (holding ?shopbot ?basket)) 
-                        (not (not-empty-basket ?item ?basket))
-                       
+                      (not (not-empty-basket ?item ?basket))
                        (at-shopbot ?shopbot ?cell) 
                        (adjacent ?cell ?cs)
-                       
                        (>= (balance ?shopbot) (price ?item)))
     :effect (and (checkout ?item ?shopbot )
                  (decrease (balance ?shopbot) (price ?item))

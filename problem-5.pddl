@@ -97,12 +97,12 @@
     (= (price bread) 5)
     (= (price ketchup) 8)
 
-    (= (stock ice-lolly) 4)
+    (= (stock ice-lolly) 0)
     (= (stock pizza) 6)
     (= (stock cabbage) 3)
     (= (stock potato) 4)
     (= (stock toothpaste) 7)
-    (= (stock shampoo) 9)
+    (= (stock shampoo) 0)
     (= (stock bread) 5)
     (= (stock ketchup) 8)
 

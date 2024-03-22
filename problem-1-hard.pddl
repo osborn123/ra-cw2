@@ -36,7 +36,7 @@
     (connected cell16 cell17) (connected cell17 cell16)
     (connected cell17 cell18) (connected cell18 cell17)
     (connected cell18 cell19) (connected cell19 cell18)
-    (connected cell19 cell20) 
+    (connected cell19 cell20) ()
     (connected cell21 cell20) (connected cell20 cell21)
     (connected cell21 cell22) (connected cell22 cell21)
     (connected cell22 cell23) (connected cell23 cell22)

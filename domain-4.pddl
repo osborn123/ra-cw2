@@ -108,25 +108,7 @@
                  (not (not-empty-basket ?item ?basket)))
   )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  (:action pickUpBasket
+ (:action pickUpBasket
     :parameters (?shopbot - shopbot ?basket - basket ?cell - aisleCell ?bs - basketStack)
     :precondition (and 
                     (at-shopbot ?shopbot ?cell) 
