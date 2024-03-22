@@ -70,15 +70,16 @@
     (adjacent cell30 shelf14) (adjacent cell31 shelf14)
     (adjacent cell32 shelf15) (adjacent cell33 shelf15)
     
-    ; Item locations for additional items
-    (in lettuce shelf12) (in tomato shelf13) (in cucumber shelf34)
-    (in pepper shelf27) (in cabbage shelf31) (in potato shelf29)
-    (in ice-lolly shelf3) (in pizza shelf4) (in toothpaste shelf5)
-    (in shampoo shelf6) (in bread shelf7) (in ketchup shelf8)
-    (in apple shelf9) (in orange shelf18) (in banana shelf11)
-    (in grapes shelf12) 
     
-    (in x shelf15)(in x shelf24) (in x shelf33)(in x shelf35)  
+    ; Item locations for additional items
+    (in lettuce shelf2) (in tomato shelf13) (in cucumber shelf4)
+    (in pepper shelf7) (in cabbage shelf1) (in potato shelf9)
+    (in ice-lolly shelf3) (in pizza shelf5) (in toothpaste shelf6)
+    (in shampoo shelf8) (in bread shelf2) (in ketchup shelf10)
+    (in apple shelf9) (in orange shelf10) (in banana shelf6)
+    (in grapes shelf10) 
+    
+    (in x shelf12)(in x shelf11)
     ; Weighable items extended
     (weighable lettuce) (weighable tomato) (weighable cucumber) (weighable pepper)
     
