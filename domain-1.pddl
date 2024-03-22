@@ -3,7 +3,7 @@
   (:types
     location
     aisleCell shelves weighingScale checkoutStand - location
-    shopbot item
+    shopbot item -object
   )
   (:predicates
     (connected ?from - aisleCell ?to - aisleCell)

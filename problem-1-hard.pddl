@@ -1,11 +1,13 @@
 (define (problem supermarket-shopping-hard)
   (:domain supermarket)
   (:objects
+  ;add more item to checkout
     cabbage potato ice-lolly pizza toothpaste shampoo bread ketchup
-    apple orange banana grapes lettuce tomato cucumber pepper x- item ;x is mean empty shelf
+    apple orange banana grapes lettuce tomato cucumber pepper x - item ;x is mean empty shelf
     scale - weighingScale
     cs - checkoutStand
-    shopbot  - shopbot ; Adding multiple ShopBots for complexity
+    shopbot1  shopbot2 - shopbot ; Adding multiple ShopBots 
+    ;add more shelf
     cell1 cell2 cell3 cell4 cell5 cell6 cell7 cell8 cell9 cell10
     cell11 cell12 cell13 cell14 cell15 cell16 cell17 cell18 cell19 cell20
     cell21 cell22 cell23 cell24 cell25 cell26 cell27 cell28 cell29 cell30
@@ -14,10 +16,11 @@
     shelf9 shelf10 shelf11 shelf12 shelf13 shelf14 shelf15 - shelves
   )
   (:init
-    (at-shopbot shopbot cell1)
+    (at-shopbot shopbot1 cell20)
+    (at-shopbot shopbot2 cell2)
   
 
-    ; Connected paths extended for additional cells
+    ;  add more Connected paths and shell
     (connected cell1 cell2) (connected cell2 cell1)
     (connected cell2 cell3) (connected cell3 cell2)
     (connected cell3 cell4) (connected cell4 cell3)
@@ -50,11 +53,10 @@
     (connected cell30 cell31) (connected cell31 cell30)
     (connected cell31 cell32) (connected cell32 cell31)
     (connected cell32 cell33) (connected cell33 cell32)
-    (connected cell33 cell34) (connected cell34 cell33)
+    (connected cell33 cell34) ; To simulate busy hour
     (connected cell34 cell35) (connected cell35 cell34)
   
-    ; Adjacencies for additional shelves
-    ; [Existing adjacencies are defined above]
+    
     (adjacent cell2 scale) (adjacent cell4 scale) (adjacent cell14 cs)
     (adjacent cell3 shelf1) (adjacent cell6 shelf1)
     (adjacent cell7 shelf2)
@@ -71,7 +73,7 @@
     (adjacent cell32 shelf15) (adjacent cell33 shelf15)
     
     
-    ; Item locations for additional items
+    ; Item locations 
     (in lettuce shelf2) (in tomato shelf13) (in cucumber shelf4)
     (in pepper shelf7) (in cabbage shelf1) (in potato shelf9)
     (in ice-lolly shelf3) (in pizza shelf5) (in toothpaste shelf6)
@@ -80,10 +82,10 @@
     (in grapes shelf10) 
     
     (in x shelf12)(in x shelf11)
-    ; Weighable items extended
+    ; Weighable items 
     (weighable lettuce) (weighable tomato) (weighable cucumber) (weighable pepper)
     
-    ; Goal extended to include additional items
+    ; Goal 
   )
   (:goal (and
     (checkout potato) (checkout ketchup) (checkout pizza)
