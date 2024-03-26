@@ -53,7 +53,7 @@
     (connected cell30 cell31) (connected cell31 cell30)
     (connected cell31 cell32) (connected cell32 cell31)
     (connected cell32 cell33) (connected cell33 cell32)
-    (connected cell33 cell34) ; To simulate busy hour
+    (connected cell33 cell34) (connected cell34 cell33)
     (connected cell34 cell35) (connected cell35 cell34)
   
     
