@@ -89,7 +89,7 @@
   )
   (:goal (and
     (checkout potato) (checkout ketchup) 
-    (checkout apple) 
+    (checkout orange) (checkout lettuce) (checkout tomato)
   ))
 )
 
