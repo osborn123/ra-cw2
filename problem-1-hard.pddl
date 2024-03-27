@@ -88,7 +88,8 @@
     ; Goal 
   )
   (:goal (and
-    (checkout potato) (checkout ketchup) 
+    (checkout potato) (checkout ketchup) (checkout pizza)
+    (checkout apple)
   ))
 )
 
